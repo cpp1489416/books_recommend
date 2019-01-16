@@ -1,4 +1,4 @@
-"""RecommendBooks URL Configuration
+"""books_recommend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
-from . import view
+
+from main import views
 
 urlpatterns = [
-    url(r'^hello$', view.hello),
-    url(r'^main$', view.main),
+    path('admin/', admin.site.urls),
+    path('insert', views.insert),
 ]
