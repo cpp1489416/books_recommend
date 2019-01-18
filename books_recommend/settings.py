@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'books_recommend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'books_recommend',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST':'192.168.231.7',
+        'HOST':'localhost',
         'PORT':'3306',
     }
 }

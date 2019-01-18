@@ -21,4 +21,5 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('insert', views.insert),
+    path('list_users', views.list_users)
 ]
