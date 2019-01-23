@@ -1,21 +1,21 @@
-
 from django.http.response import JsonResponse
 from django.db.models import Model
 from django.forms.models import model_to_dict
 from django.db.models import QuerySet
 
+
 class RestJsonResponse(JsonResponse):
     def __init__(self, info=None, msg='', code='0', **kwargs):
         if isinstance(info, Model):
-            dict = model_to_dict(info)
+            info_dict = model_to_dict(info)
         elif isinstance(info, QuerySet):
-            dict = []
+            info_dict = []
             for item in info:
-                dict.append(model_to_dict(item))
+                info_dict.append(model_to_dict(item))
         else:
-            dict = info
+            info_dict = info
         super().__init__(data={
-            'code':code,
+            'code': code,
             'msg': msg,
-            'info': dict,
-        },safe=False,**kwargs)
+            'info': info_dict,
+        }, safe=False, **kwargs)

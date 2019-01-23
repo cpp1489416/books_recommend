@@ -19,21 +19,24 @@ def login(request):
     username = request.GET.get('username', 'dd')
     password = request.GET.get('password', 'ps')
     user = auth.authenticate(username=username, password=password)
-    if user == None:
-        return RestJsonResponse(msg='wrong username or password',code=403,status=403)
+    if user is None:
+        return RestJsonResponse(msg='wrong username or password', code=403, status=403)
     auth.login(request, user)
     return RestJsonResponse({
         'username': username,
         'password': password,
     })
 
+
 def logout(request):
     auth.logout(request)
     return RestJsonResponse()
 
+
 def create_admin(request):
     user = auth.models.User.objects.create_superuser('admin', 'none', 'password')
     user.save()
+
 
 def books_list(request):
     if request.method == 'GET':
@@ -45,10 +48,11 @@ def books_list(request):
         book.save()
         return RestJsonResponse()
 
+
 def books_detail(request, id):
     if request.method == 'GET':
         book = Book.objects.get(id=id)
-        return RestJsonResponse(book) 
+        return RestJsonResponse(book)
     elif request.method == 'PUT':
         book = Book.objects.filter(id=id)
         book.update(**request.info)
