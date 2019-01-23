@@ -11,4 +11,3 @@ class User(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=300)
     desc = models.CharField(max_length=300)
-

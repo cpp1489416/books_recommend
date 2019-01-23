@@ -105,3 +105,8 @@ venv.bak/
 
 .idea/
 *.iml
+
+.vscode/
+.DS_STORE
+
+migrations/
