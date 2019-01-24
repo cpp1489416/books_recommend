@@ -1,9 +1,12 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
 from django.forms.models import model_to_dict
 import django.contrib.auth as auth
+from django.views.decorators.http import require_http_methods
+from django.views.generic.base import View
+
 from main.models import Book
 from main.one import RestJsonResponse
 from django.core.exceptions import ObjectDoesNotExist
@@ -15,17 +18,15 @@ def users_list(request):
     return RestJsonResponse(users)
 
 
+@require_http_methods(['POST'])
 def login(request):
-    username = request.GET.get('username', 'dd')
-    password = request.GET.get('password', 'ps')
+    username = request.info['username']
+    password = request.info['password']
     user = auth.authenticate(username=username, password=password)
     if user is None:
         return RestJsonResponse(msg='wrong username or password', code=403, status=403)
     auth.login(request, user)
-    return RestJsonResponse({
-        'username': username,
-        'password': password,
-    })
+    return RestJsonResponse()
 
 
 def logout(request):
@@ -38,26 +39,36 @@ def create_admin(request):
     user.save()
 
 
-def books_list(request):
-    if request.method == 'GET':
+class BooksAll(View):
+    @staticmethod
+    def get(request):
         books = Book.objects.all()
         return RestJsonResponse(books)
-    elif request.method == 'POST':
+
+    @staticmethod
+    def post(request):
         book = Book(**request.info)
         book.id = None
         book.save()
         return RestJsonResponse()
 
 
-def books_detail(request, id):
-    if request.method == 'GET':
+class BooksDetail(View):
+    @staticmethod
+    def get(request, id):
         book = Book.objects.get(id=id)
         return RestJsonResponse(book)
-    elif request.method == 'PUT':
+
+    @staticmethod
+    def put(request, id):
         book = Book.objects.filter(id=id)
+        request.info.pop('id')
         book.update(**request.info)
         return RestJsonResponse(Book.objects.get(id=id))
-    elif request.method == 'DELETE':
+
+    @staticmethod
+    def delete(request, id):
         book = Book.objects.filter(id=id)
         book.delete()
         return RestJsonResponse()
+

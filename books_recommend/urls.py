@@ -24,6 +24,7 @@ urlpatterns = [
     path('logout', views.logout),
     path('create_admin', views.create_admin),
     path('users', views.users_list),
-    path('books', views.books_list),
-    path('books/<int:id>', views.books_detail),
+    path('books', views.BooksAll.as_view()),
+    path('books/<int:id>', views.BooksDetail.as_view(), name='fdasfasd'),
 ]
+
