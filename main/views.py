@@ -24,7 +24,7 @@ def login(request):
     password = request.info['password']
     user = auth.authenticate(username=username, password=password)
     if user is None:
-        return RestJsonResponse(msg='wrong username or password', code=403, status=403)
+        return RestJsonResponse(msg='wrong username or password', code="403", status=200)
     auth.login(request, user)
     return RestJsonResponse()
 
@@ -32,6 +32,11 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return RestJsonResponse()
+
+
+def user_info(request):
+    user = auth.get_user(request)
+    return RestJsonResponse(user)
 
 
 def create_admin(request):
