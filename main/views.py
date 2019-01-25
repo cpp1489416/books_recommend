@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, render_to_response
 
@@ -47,15 +48,23 @@ def create_admin(request):
 class BooksAll(View):
     @staticmethod
     def get(request):
-        books = Book.objects.all()
-        return RestJsonResponse(books)
+        page_number = int(request.GET.get('page_number', '1'))
+        order_by = request.GET.get('order_by', 'id')
+        books = Book.objects.order_by(order_by)
+        if 'name' in request.GET:
+            books = books.filter(name__contains=request.GET['name'])
+        if 'desc' in request.GET:
+            books = books.filter(desc__contains=request.GET['desc'])
+        page_size = int(request.GET.get('page_size', str(books.count())))
+        page = Paginator(books, page_size).page(page_number)
+        return RestJsonResponse(page)
 
     @staticmethod
     def post(request):
         book = Book(**request.info)
         book.id = None
         book.save()
-        return RestJsonResponse()
+        return RestJsonResponse(book)
 
 
 class BooksDetail(View):
@@ -76,4 +85,3 @@ class BooksDetail(View):
         book = Book.objects.filter(id=id)
         book.delete()
         return RestJsonResponse()
-
