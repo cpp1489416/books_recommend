@@ -56,7 +56,7 @@ class BooksAll(View):
         if 'desc' in request.GET:
             books = books.filter(desc__contains=request.GET['desc'])
         page_size = int(request.GET.get('page_size', str(books.count())))
-        page = Paginator(books, page_size).page(page_number)
+        page = Paginator(books, page_size if page_size > 0 else 1).page(page_number)
         return RestJsonResponse(page)
 
     @staticmethod

@@ -5,18 +5,25 @@ from django.forms.models import model_to_dict
 from django.db.models import QuerySet
 
 
+def _model_to_dict(model):
+    if hasattr(model, 'to_dict'):
+        return model.to_dict()
+    else:
+        return model_to_dict(model)
+
+
 class RestJsonResponse(JsonResponse):
     def __init__(self, info=None, msg='', code='0', **kwargs):
         if isinstance(info, Model):
-            info_dict = info.to_dict()
+            info_dict = _model_to_dict(info)
         elif isinstance(info, QuerySet):
             info_dict = []
             for item in info:
-                info_dict.append(info.to_dict())
+                info_dict.append(_model_to_dict(item))
         elif isinstance(info, Page):
             info_dict = {
                 'count': info.paginator.count,
-                'content': list(map(lambda e: e.to_dict() if isinstance(e, Model) else e, list(info))),
+                'content': list(map(lambda e: _model_to_dict(e) if isinstance(e, Model) else e, list(info))),
             }
         else:
             info_dict = info
