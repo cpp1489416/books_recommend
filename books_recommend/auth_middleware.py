@@ -32,7 +32,8 @@ class AuthMiddleware(MiddlewareMixin):
     @staticmethod
     def process_exception(request, exception):
         if isinstance(exception, ObjectDoesNotExist):
-            return RestJsonResponse(msg='not found', code='404')
+            pass
+            # return RestJsonResponse(msg='not found', code='404')
         elif isinstance(exception, KeyError):
             return RestJsonResponse(msg='property not found: ' + str(exception), code='404')
         elif isinstance(exception, AttributeError) and 'Request\' object has no attribute \'info\'' in str(exception):

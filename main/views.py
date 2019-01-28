@@ -53,6 +53,8 @@ class Books(View):
         books = Book.objects.order_by(order_by)
         if 'title' in request.GET:
             books = books.filter(title__contains=request.GET['title'])
+        if 'isbn' in request.GET:
+            books = books.filter(isbn__contains=request.GET['isbn'])
         page_size = int(request.GET.get('page_size', str(books.count())))
         page = Paginator(books, page_size if page_size > 0 else 1).page(page_number)
         return RestJsonResponse(page)
@@ -69,6 +71,26 @@ class BooksDetail(View):
     @staticmethod
     def get(request, id):
         book = Book.objects.get(id=id)
+        return RestJsonResponse(book)
+
+    @staticmethod
+    def put(request, id):
+        book = Book.objects.filter(id=id)
+        request.info.pop('id')
+        book.update(**request.info)
+        return RestJsonResponse(Book.objects.get(id=id))
+
+    @staticmethod
+    def delete(request, id):
+        book = Book.objects.filter(id=id)
+        book.delete()
+        return RestJsonResponse()
+
+
+class BooksIsbnDetail(View):
+    @staticmethod
+    def get(request, isbn):
+        book = Book.objects.get(isbn=isbn)
         return RestJsonResponse(book)
 
     @staticmethod
@@ -164,6 +186,12 @@ class RatingsUserDetail(View):
 class RatingsBookIsbnDetail(View):
     @staticmethod
     def get(request, isbn):
-        ratings = Rating.objects.filter(isbn=isbn)
-        ratings_dict = list(map(lambda e: e.to_dict_with_user(), list(ratings)))
-        return RestJsonResponse(ratings_dict)
+        page_number = int(request.GET.get('page_number', '1'))
+        order_by = request.GET.get('order_by', 'isbn')
+        ratings = Rating.objects.filter(isbn=isbn).order_by(order_by)
+        page_size = int(request.GET.get('page_size', str(ratings.count())))
+        page = Paginator(ratings, page_size if page_size > 0 else 1).page(page_number)
+        return RestJsonResponse({
+            'count': page.paginator.count,
+            'content': list(map(lambda e: e.to_dict_with_user(), list(page))),
+        })
