@@ -150,9 +150,15 @@ class RatingsDetail(View):
 class RatingsUserDetail(View):
     @staticmethod
     def get(request, id):
-        ratings = Rating.objects.filter(user_id=id)
-        ratings_dict = list(map(lambda e: e.to_dict_with_book(), list(ratings)))
-        return RestJsonResponse(ratings_dict)
+        page_number = int(request.GET.get('page_number', '1'))
+        order_by = request.GET.get('order_by', 'id')
+        ratings = Rating.objects.filter(user_id=id).order_by(order_by)
+        page_size = int(request.GET.get('page_size', str(ratings.count())))
+        page = Paginator(ratings, page_size if page_size > 0 else 1).page(page_number)
+        return RestJsonResponse({
+            'count': page.paginator.count,
+            'content': list(map(lambda e: e.to_dict_with_book(), list(page))),
+        })
 
 
 class RatingsBookIsbnDetail(View):
