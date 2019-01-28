@@ -8,7 +8,7 @@ import django.contrib.auth as auth
 from django.views.decorators.http import require_http_methods
 from django.views.generic.base import View
 
-from main.models import Book
+from main.models import Book, User, Rating
 from main.one import RestJsonResponse
 from django.core.exceptions import ObjectDoesNotExist
 import json
@@ -45,16 +45,14 @@ def create_admin(request):
     user.save()
 
 
-class BooksAll(View):
+class Books(View):
     @staticmethod
     def get(request):
         page_number = int(request.GET.get('page_number', '1'))
         order_by = request.GET.get('order_by', 'id')
         books = Book.objects.order_by(order_by)
-        if 'name' in request.GET:
-            books = books.filter(name__contains=request.GET['name'])
-        if 'desc' in request.GET:
-            books = books.filter(desc__contains=request.GET['desc'])
+        if 'title' in request.GET:
+            books = books.filter(title__contains=request.GET['title'])
         page_size = int(request.GET.get('page_size', str(books.count())))
         page = Paginator(books, page_size if page_size > 0 else 1).page(page_number)
         return RestJsonResponse(page)
@@ -85,3 +83,81 @@ class BooksDetail(View):
         book = Book.objects.filter(id=id)
         book.delete()
         return RestJsonResponse()
+
+
+class Users(View):
+    @staticmethod
+    def get(request):
+        page_number = int(request.GET.get('page_number', '1'))
+        order_by = request.GET.get('order_by', 'id')
+        users = User.objects.order_by(order_by)
+        if 'name' in request.GET:
+            users = users.filter(name__contains=request.GET['name'])
+        if 'location' in request.GET:
+            users = users.filter(location__contains=request.GET['location'])
+        page_size = int(request.GET.get('page_size', str(users.count())))
+        page = Paginator(users, page_size if page_size > 0 else 1).page(page_number)
+        return RestJsonResponse(page)
+
+    @staticmethod
+    def post(request):
+        user = User(**request.info)
+        user.id = None
+        user.save()
+        return RestJsonResponse(user)
+
+
+class UsersDetail(View):
+    @staticmethod
+    def get(request, id):
+        user = User.objects.get(id=id)
+        return RestJsonResponse(user)
+
+    @staticmethod
+    def put(request, id):
+        user = User.objects.filter(id=id)
+        request.info.pop('id')
+        user.update(**request.info)
+        return RestJsonResponse(User.objects.get(id=id))
+
+    @staticmethod
+    def delete(request, id):
+        user = User.objects.filter(id=id)
+        user.delete()
+        return RestJsonResponse()
+
+
+class RatingsDetail(View):
+    @staticmethod
+    def get(request, id):
+        rating = Rating.objects.get(id=id)
+        return RestJsonResponse(rating)
+
+    @staticmethod
+    def put(request, id):
+        user = User.objects.filter(id=id)
+        request.info.pop('id')
+        user.update(**request.info)
+        return RestJsonResponse(User.objects.get(id=id))
+
+    @staticmethod
+    def delete(request, id):
+        user = User.objects.filter(id=id)
+        user.delete()
+        return RestJsonResponse()
+
+
+class RatingsUserDetail(View):
+    @staticmethod
+    def get(request, id):
+        ratings = Rating.objects.filter(user_id=id)
+        ratings_dict = list(map(lambda e: e.to_dict_with_book(), list(ratings)))
+        return RestJsonResponse(ratings_dict)
+
+
+class RatingsBookIsbnDetail(View):
+    @staticmethod
+    def get(request, isbn):
+        ratings = Rating.objects.filter(isbn=isbn)
+        ratings_dict = list(map(lambda e: e.to_dict_with_user(), list(ratings)))
+        return RestJsonResponse(ratings_dict)
