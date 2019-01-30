@@ -110,3 +110,8 @@ venv.bak/
 .DS_STORE
 
 migrations/
+.ipynb_checkpoints/
+BX-CSV-Dump/
+ml-latest-small/
+spark-warehouse/
+venv/
