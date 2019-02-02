@@ -78,7 +78,7 @@ DATABASES = {
         'NAME': 'books_recommend',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'HOST': '192.168.231.1',
         'PORT': '3306',
     }
 }
