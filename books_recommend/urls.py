@@ -28,8 +28,9 @@ urlpatterns = [
     path('users/<int:id>', views.UsersDetail.as_view()),
     path('books', views.Books.as_view()),
     path('books/<int:id>', views.BooksDetail.as_view()),
-    path('books/isbn/<isbn>', views.BooksIsbnDetail.as_view()),
     path('ratings/<int:id>', views.RatingsDetail.as_view()),
-    path('ratings/user/<int:id>', views.RatingsUserDetail.as_view()),
-    path('ratings/book/isbn/<isbn>', views.RatingsBookIsbnDetail.as_view()),
+    path('ratings/user/<int:user_id>', views.RatingsUserDetail.as_view()),
+    path('ratings/book/<int:book_id>', views.RatingsBookDetail.as_view()),
+    path('recommendations/user/<int:user_id>', views.Recommendations.as_view()),
+    path('recommendations/update_similarity', views.recommendation_update_similarity),
 ]

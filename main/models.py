@@ -30,7 +30,7 @@ class Book(models.Model):
 
 class Rating(models.Model):
     user_id = models.IntegerField(default=0)
-    isbn = models.CharField(max_length=13, default='default')
+    book_id = models.IntegerField(max_length=13, default='default')
     rating = models.IntegerField(default=0, null=False)
 
     def to_dict(self):
@@ -39,7 +39,7 @@ class Rating(models.Model):
     def to_dict_with_book(self):
         ans = model_to_dict(self)
         try:
-            ans['book'] = Book.objects.get(isbn=ans['isbn']).to_dict()
+            ans['book'] = Book.objects.get(id=ans['id']).to_dict()
         except ObjectDoesNotExist:
             ans['book'] = {
                 'title': 'Does Not Exist'

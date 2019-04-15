@@ -78,8 +78,13 @@ DATABASES = {
         'NAME': 'books_recommend',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '192.168.231.1',
+        'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS_help': {
+            'ssl': {
+                'ca': os.path.join(os.path.dirname(__file__), 'ca', 'ca.pem')
+            }
+        }
     }
 }
 
