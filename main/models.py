@@ -3,11 +3,11 @@ from django.db import models
 
 # Create your models here.
 from django.forms import model_to_dict
+from django.contrib.auth.models import AbstractUser
 
 
-class User(models.Model):
-    name = models.CharField(max_length=30)
-    password = models.CharField(max_length=30,default='password')
+class User(AbstractUser):
+    name = models.CharField(max_length=100)
     role = models.IntegerField(default=0)
     location = models.CharField(max_length=250, default='default')
     age = models.IntegerField(default=-1)
@@ -29,25 +29,24 @@ class Book(models.Model):
 
 
 class Rating(models.Model):
-    user_id = models.IntegerField(default=0)
-    book_id = models.IntegerField(max_length=13, default='default')
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    book = models.ForeignKey('Book', on_delete=models.CASCADE)
     rating = models.IntegerField(default=0, null=False)
 
     def to_dict(self):
-        return model_to_dict(self)
+        return {
+            'id': self.id,
+            'book_id': self.book.id,
+            'user_id': self.user.id,
+            'rating': self.rating,
+            'book': self.book.to_dict(),
+            'user': self.user.to_dict()
+        }
 
-    def to_dict_with_book(self):
-        ans = model_to_dict(self)
-        try:
-            ans['book'] = Book.objects.get(id=ans['id']).to_dict()
-        except ObjectDoesNotExist:
-            ans['book'] = {
-                'title': 'Does Not Exist'
-            }
-            pass
-        return ans
-
-    def to_dict_with_user(self):
-        ans = self.to_dict()
-        ans['user'] = User.objects.get(id=ans['user_id']).to_dict()
-        return ans
+    def to_dict_without_user_and_book(self):
+        return {
+            'id': self.id,
+            'book_id': self.book.id,
+            'user_id': self.user.id,
+            'rating': self.rating,
+        }

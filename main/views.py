@@ -17,6 +17,7 @@ import pickle
 import logging
 import operator
 import math
+import time
 from . import recommendation
 
 logger = logging.getLogger(__name__)
@@ -43,8 +44,9 @@ def logout(request):
     return RestJsonResponse()
 
 
-def user_info(request):
+def user(request):
     user = auth.get_user(request)
+    # time.sleep(2)
     return RestJsonResponse(user)
 
 
@@ -86,6 +88,7 @@ class BooksDetail(View):
         book = Book.objects.filter(id=id)
         request.info.pop('id')
         book.update(**request.info)
+        time.sleep(1)
         return RestJsonResponse(Book.objects.get(id=id))
 
     @staticmethod
@@ -93,6 +96,50 @@ class BooksDetail(View):
         book = Book.objects.filter(id=id)
         book.delete()
         return RestJsonResponse()
+
+
+class BooksDetailRating(View):
+    @staticmethod
+    def get(request, id):
+        user_id = auth.get_user(request).id
+        time.sleep(1)
+        try:
+            rating = Rating.objects.get(user_id=user_id, book_id=id)
+            return RestJsonResponse(rating.to_dict_without_user_and_book())
+        except Rating.DoesNotExist:
+            return RestJsonResponse(code='404', msg='no such rating')
+
+    @staticmethod
+    def put(request, id):
+        user_id = auth.get_user(request).id
+        rating_id = None
+        try:
+            rating_id = Rating.objects.get(user_id=user_id, book_id=id).id
+        except Rating.DoesNotExist:
+            pass
+        print(request.info)
+        rating = Rating(book_id=id, user_id=user_id, rating=request.info['rating'])
+        rating.id = rating_id
+        rating.save()
+        time.sleep(1)
+        return RestJsonResponse()
+
+
+class BooksDetailRatings(View):
+    @staticmethod
+    def get(request,id):
+        page_number = int(request.GET.get('page_number', '1'))
+        order_by = request.GET.get('order_by', 'id')
+        ratings = Rating.objects.filter(book__id=id).order_by(order_by)
+        if 'user_name' in request.GET:
+            ratings = ratings.filter(user__username__contains=request.GET['user_name'])
+
+        page_size = int(request.GET.get('page_size', str(ratings.count())))
+        page = Paginator(ratings, page_size if page_size > 0 else 1).page(page_number)
+        return RestJsonResponse({
+            'count': page.paginator.count,
+            'content': list(map(lambda e: e.to_dict(), list(page))),
+        })
 
 
 class Users(View):
@@ -171,46 +218,36 @@ class RatingsUserDetail(View):
         })
 
 
-class RatingsBookDetail(View):
-    @staticmethod
-    def get(request, book_id):
-        page_number = int(request.GET.get('page_number', '1'))
-        order_by = request.GET.get('order_by', 'isbn')
-        ratings = Rating.objects.filter(book_id=book_id).order_by(order_by)
-        page_size = int(request.GET.get('page_size', str(ratings.count())))
-        page = Paginator(ratings, page_size if page_size > 0 else 1).page(page_number)
-        return RestJsonResponse({
-            'count': page.paginator.count,
-            'content': list(map(lambda e: e.to_dict_with_user(), list(page))),
-        })
+
+def recommendations(request):
+    user = auth.get_user(request)
+    return recommendations_user(request, user.id)
 
 
-class Recommendations(View):
+def recommendations_user(request, user_id):
+    page_number = int(request.GET.get('page_number', '1'))
+    page_size = int(request.GET.get('page_size', 100))
+    k = int(request.GET.get('k', 5))
 
-    def get(self, request, user_id):
-        page_number = int(request.GET.get('page_number', '1'))
-        page_size = int(request.GET.get('page_size', 100))
-        k = int(request.GET.get('k', 5))
+    ratings = Rating.objects.filter(user_id=user_id, rating__gt=3)
+    ranks = {}
+    for item in ratings:
+        for book_id, p in recommendation.get_similarity_sorted()[item.book_id][0:k]:
+            ranks.setdefault(book_id, 0.0)
+            ranks[book_id] += p * 1
 
-        ratings = Rating.objects.filter(user_id=user_id, rating__gt=3)
-        ranks = {}
-        for item in ratings:
-            for book_id, p in recommendation.get_similarity_sorted()[item.book_id][0:k]:
-                ranks.setdefault(book_id, 0.0)
-                ranks[book_id] += p * 1
+    ranks = sorted(ranks.items(), key=operator.itemgetter(1), reverse=True)
 
-        ranks = sorted(ranks.items(), key=operator.itemgetter(1), reverse=True)
+    books = []
+    for rank in ranks[page_size * (page_number - 1): min(page_size * page_number, Book.objects.count())]:
+        book = Book.objects.get(id=rank[0]).to_dict()
+        book['rank'] = rank[1]
+        books.append(book)
 
-        books = []
-        for rank in ranks[page_size * (page_number - 1): min(page_size * page_number, Book.objects.count())]:
-            book = Book.objects.get(id=rank[0]).to_dict()
-            book['rank'] = rank[1]
-            books.append(book)
-
-        return RestJsonResponse({
-            'count': len(ranks),
-            'content': books
-        })
+    return RestJsonResponse({
+        'count': len(ranks),
+        'content': books
+    })
 
 
 def recommendation_update_similarity(request):
