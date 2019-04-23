@@ -1,6 +1,7 @@
 import pickle
 
 import redis
+from .notebook import read_ratings
 
 _o = None
 
@@ -18,6 +19,11 @@ class Recommendation:
         self.similarity = pickle.loads(self.redis_server.get('books_recommend:unsorted_similarity'))
         self.similarity_sorted = pickle.loads(self.redis_server.get('books_recommend:sorted_similarity'))
         self.cost_seconds = pickle.loads(self.redis_server.get('books_recommend:cost_time')).total_seconds()
+
+    def regenerate(self):
+        read_ratings.main_flow()
+        self.update()
+        pass
 
 
 if _o is None:
@@ -38,3 +44,11 @@ def get_cost_seconds():
 
 def update_similarity():
     _o.update()
+
+
+def regenerate_similarity():
+    _o.regenerate()
+
+
+def get_redis_server():
+    return _o.redis_server

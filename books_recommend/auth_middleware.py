@@ -16,7 +16,7 @@ class AuthMiddleware(MiddlewareMixin):
                 request.info = json.loads(request.body)
             except JSONDecodeError:
                 return HttpResponse(status=400)
-        if request.path == '/login' or request.path == '/create_admin':
+        if request.path == '/login' or request.path == '/create_admin' or request.path == '/register':
             return
         if not request.user.is_authenticated:
             return JsonResponse(status=403, data={
@@ -31,6 +31,7 @@ class AuthMiddleware(MiddlewareMixin):
 
     @staticmethod
     def process_exception(request, exception):
+        return
         if isinstance(exception, ObjectDoesNotExist):
             pass
             # return RestJsonResponse(msg='not found', code='404')
