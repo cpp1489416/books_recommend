@@ -1,0 +1,208 @@
+[I 00:50:22.912 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
+[I 00:50:23.155 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 00:50:23.155 NotebookApp] Serving notebooks from local directory: /home/username/B/projects/notebook
+[I 00:50:23.155 NotebookApp] The Jupyter Notebook is running at:
+[I 00:50:23.155 NotebookApp] https://(VM_0_8_centos or 127.0.0.1):8888/
+[I 00:50:23.155 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 00:50:25.065 NotebookApp] SSL Error on 10 ('117.136.45.102', 13183): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 00:50:25.071 NotebookApp] SSL Error on 9 ('117.136.45.102', 13184): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 00:50:25.277 NotebookApp] Clearing invalid/expired login cookie username-118-126-66-47-8888
+[W 00:50:25.277 NotebookApp] Clearing invalid/expired login cookie username-118-126-66-47-8888
+[I 00:50:25.278 NotebookApp] 302 GET /tree (117.136.45.102) 1.94ms
+[I 00:50:43.827 NotebookApp] 302 POST /login?next=%2Ftree (117.136.45.102) 1.06ms
+[W 00:50:45.249 NotebookApp] SSL Error on 11 ('117.136.45.102', 13189): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 00:50:45.395 NotebookApp] SSL Error on 12 ('117.136.45.102', 13188): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 00:50:45.395 NotebookApp] SSL Error on 13 ('117.136.45.102', 13187): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 00:50:45.395 NotebookApp] SSL Error on 14 ('117.136.45.102', 13190): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 00:50:54.181 NotebookApp] Kernel started: e1f0192a-ed6a-4930-852b-4a1751b48b8f
+[W 00:50:54.763 NotebookApp] SSL Error on 31 ('117.136.45.102', 13195): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 00:50:55.224 NotebookApp] Adapting to protocol v5.1 for kernel e1f0192a-ed6a-4930-852b-4a1751b48b8f
+[I 00:53:00.366 NotebookApp] Kernel started: 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4
+[W 00:53:00.594 NotebookApp] SSL Error on 46 ('117.136.45.102', 13197): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 00:53:01.046 NotebookApp] Adapting to protocol v5.1 for kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4
+[W 00:53:49.711 NotebookApp] SSL Error on 48 ('117.136.45.102', 13199): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 00:53:49.901 NotebookApp] Adapting to protocol v5.1 for kernel e1f0192a-ed6a-4930-852b-4a1751b48b8f
+[I 00:54:30.993 NotebookApp] New terminal with automatic name: 1
+[W 00:54:40.737 NotebookApp] SSL Error on 12 ('117.136.45.102', 13201): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 00:55:01.219 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 00:57:00.483 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 00:58:15.366 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+WARNING:root:kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4 restarted
+[I 00:58:51.894 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+WARNING:root:kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4 restarted
+[I 00:59:00.449 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 00:59:22.154 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+WARNING:root:kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4 restarted
+[I 00:59:49.404 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+WARNING:root:kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4 restarted
+[I 01:01:00.476 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 01:03:00.526 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 01:05:18.915 NotebookApp] Saving file at /calculate_answer.ipynb
+[I 01:05:51.939 NotebookApp] Saving file at /calculate_answer.ipynb
+[W 01:06:59.138 NotebookApp] SSL Error on 10 ('117.136.45.102', 13203): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:06:59.965 NotebookApp] SSL Error on 15 ('117.136.45.102', 13205): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:06:59.972 NotebookApp] SSL Error on 10 ('117.136.45.102', 13204): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:07:00.741 NotebookApp] SSL Error on 10 ('117.136.45.102', 13206): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:07:00.741 NotebookApp] SSL Error on 15 ('117.136.45.102', 13207): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 01:07:01.862 NotebookApp] Saving file at /calculate_answer.ipynb
+[W 01:10:44.318 NotebookApp] SSL Error on 15 ('117.136.45.102', 13581): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:10:44.506 NotebookApp] SSL Error on 16 ('117.136.45.102', 13582): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:36:39.350 NotebookApp] SSL Error on 15 ('117.136.45.102', 13583): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:36:39.383 NotebookApp] SSL Error on 11 ('117.136.45.102', 13584): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 01:46:30.565 NotebookApp] SSL Error on 11 ('80.82.70.187', 37682): [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:852)
+[W 02:09:12.667 NotebookApp] SSL Error on 11 ('124.235.138.72', 26911): [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:852)
+[I 02:21:39.278 NotebookApp] Starting buffering for e1f0192a-ed6a-4930-852b-4a1751b48b8f:cac6b1835a544be7b595fa33295cc3da
+[I 02:21:39.279 NotebookApp] Starting buffering for 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4:c9828e2a2fc242cc8f384bdbaad5ee4f
+[W 02:23:54.823 NotebookApp] SSL Error on 10 ('117.136.45.102', 13587): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:23:54.834 NotebookApp] SSL Error on 11 ('117.136.45.102', 13588): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:23:55.202 NotebookApp] SSL Error on 11 ('117.136.45.102', 13590): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:23:55.350 NotebookApp] SSL Error on 12 ('117.136.45.102', 13592): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:23:55.449 NotebookApp] SSL Error on 16 ('117.136.45.102', 13593): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:08.445 NotebookApp] SSL Error on 12 ('117.136.45.102', 13595): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.794 NotebookApp] SSL Error on 15 ('117.136.45.102', 13598): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.826 NotebookApp] SSL Error on 32 ('117.136.45.102', 13599): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.828 NotebookApp] SSL Error on 16 ('117.136.45.102', 13597): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.830 NotebookApp] SSL Error on 37 ('117.136.45.102', 13600): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.906 NotebookApp] SSL Error on 15 ('117.136.45.102', 13601): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:31.960 NotebookApp] SSL Error on 37 ('117.136.45.102', 13602): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:44.544 NotebookApp] SSL Error on 37 ('117.136.45.102', 13607): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:24:49.608 NotebookApp] SSL Error on 37 ('117.136.45.102', 13608): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:45.674 NotebookApp] SSL Error on 10 ('117.136.45.102', 13609): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:45.746 NotebookApp] SSL Error on 15 ('117.136.45.102', 13611): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:45.750 NotebookApp] SSL Error on 11 ('117.136.45.102', 13610): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:45.901 NotebookApp] SSL Error on 37 ('117.136.45.102', 13616): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:45.902 NotebookApp] SSL Error on 16 ('117.136.45.102', 13615): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:46.286 NotebookApp] SSL Error on 38 ('117.136.45.102', 13617): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:46.504 NotebookApp] SSL Error on 37 ('117.136.45.102', 13618): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:46.603 NotebookApp] SSL Error on 38 ('117.136.45.102', 13619): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:46.636 NotebookApp] SSL Error on 37 ('117.136.45.102', 13620): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:40:46.714 NotebookApp] SSL Error on 38 ('117.136.45.102', 13621): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:41:40.056 NotebookApp] SSL Error on 39 ('117.136.45.102', 13624): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 02:41:40.244 NotebookApp] Adapting to protocol v5.1 for kernel e1f0192a-ed6a-4930-852b-4a1751b48b8f
+[W 02:41:56.529 NotebookApp] SSL Error on 41 ('117.136.45.102', 13626): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 02:42:19.366 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20190415005022 (117.136.45.102) 36.98ms referer=https://118.126.66.47:8888/notebooks/read_ratings.ipynb
+[W 02:42:37.016 NotebookApp] SSL Error on 42 ('117.136.45.102', 13628): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 02:42:37.421 NotebookApp] Adapting to protocol v5.1 for kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4
+[W 02:42:46.414 NotebookApp] SSL Error on 30 ('117.136.45.102', 13630): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[I 02:42:46.586 NotebookApp] Adapting to protocol v5.1 for kernel e1f0192a-ed6a-4930-852b-4a1751b48b8f
+[W 02:43:14.339 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20190415005022 (117.136.45.102) 1.71ms referer=https://118.126.66.47:8888/notebooks/calculate_answer.ipynb
+[W 03:14:10.712 NotebookApp] SSL Error on 10 ('117.136.45.102', 13632): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 03:14:10.738 NotebookApp] SSL Error on 11 ('117.136.45.102', 13633): [SSL: SSLV3_ALERT_CERTIFICATE_UNKNOWN] sslv3 alert certificate unknown (_ssl.c:852)
+[W 14:32:41.208 NotebookApp] Permission to listen on port 8888 denied
+[W 14:32:41.213 NotebookApp] Permission to listen on port 8889 denied
+[W 14:32:41.213 NotebookApp] Permission to listen on port 8890 denied
+[W 14:32:41.213 NotebookApp] Permission to listen on port 8891 denied
+[W 14:32:41.214 NotebookApp] Permission to listen on port 8892 denied
+[W 14:32:41.214 NotebookApp] Permission to listen on port 8816 denied
+[W 14:32:41.215 NotebookApp] Permission to listen on port 8931 denied
+[W 14:32:41.215 NotebookApp] Permission to listen on port 8813 denied
+[W 14:32:41.215 NotebookApp] Permission to listen on port 8927 denied
+[W 14:32:41.216 NotebookApp] Permission to listen on port 8803 denied
+[W 14:32:41.218 NotebookApp] Permission to listen on port 8953 denied
+[W 14:32:41.219 NotebookApp] Permission to listen on port 8935 denied
+[W 14:32:41.220 NotebookApp] Permission to listen on port 8951 denied
+[W 14:32:41.220 NotebookApp] Permission to listen on port 8890 denied
+[W 14:32:41.221 NotebookApp] Permission to listen on port 8872 denied
+[W 14:32:41.222 NotebookApp] Permission to listen on port 8817 denied
+[W 14:32:41.223 NotebookApp] Permission to listen on port 8955 denied
+[W 14:32:41.224 NotebookApp] Permission to listen on port 8858 denied
+[W 14:32:41.225 NotebookApp] Permission to listen on port 8846 denied
+[W 14:32:41.225 NotebookApp] Permission to listen on port 8845 denied
+[W 14:32:41.226 NotebookApp] Permission to listen on port 8975 denied
+[W 14:32:41.226 NotebookApp] Permission to listen on port 8858 denied
+[W 14:32:41.227 NotebookApp] Permission to listen on port 8823 denied
+[W 14:32:41.228 NotebookApp] Permission to listen on port 8906 denied
+[W 14:32:41.229 NotebookApp] Permission to listen on port 8848 denied
+[W 14:32:41.230 NotebookApp] Permission to listen on port 8837 denied
+[W 14:32:41.230 NotebookApp] Permission to listen on port 8845 denied
+[W 14:32:41.230 NotebookApp] Permission to listen on port 8930 denied
+[W 14:32:41.231 NotebookApp] Permission to listen on port 8852 denied
+[W 14:32:41.231 NotebookApp] Permission to listen on port 8983 denied
+[W 14:32:41.232 NotebookApp] Permission to listen on port 8842 denied
+[W 14:32:41.233 NotebookApp] Permission to listen on port 8898 denied
+[W 14:32:41.234 NotebookApp] Permission to listen on port 8887 denied
+[W 14:32:41.235 NotebookApp] Permission to listen on port 8798 denied
+[W 14:32:41.236 NotebookApp] Permission to listen on port 8925 denied
+[W 14:32:41.236 NotebookApp] Permission to listen on port 8890 denied
+[W 14:32:41.237 NotebookApp] Permission to listen on port 8970 denied
+[W 14:32:41.238 NotebookApp] Permission to listen on port 8985 denied
+[W 14:32:41.238 NotebookApp] Permission to listen on port 8851 denied
+[W 14:32:41.238 NotebookApp] Permission to listen on port 8949 denied
+[W 14:32:41.239 NotebookApp] Permission to listen on port 8856 denied
+[W 14:32:41.240 NotebookApp] Permission to listen on port 8963 denied
+[W 14:32:41.240 NotebookApp] Permission to listen on port 8875 denied
+[W 14:32:41.241 NotebookApp] Permission to listen on port 8904 denied
+[W 14:32:41.241 NotebookApp] Permission to listen on port 8831 denied
+[W 14:32:41.242 NotebookApp] Permission to listen on port 8911 denied
+[W 14:32:41.242 NotebookApp] Permission to listen on port 8983 denied
+[W 14:32:41.243 NotebookApp] Permission to listen on port 8837 denied
+[W 14:32:41.243 NotebookApp] Permission to listen on port 8974 denied
+[W 14:32:41.244 NotebookApp] Permission to listen on port 8813 denied
+[W 14:32:41.244 NotebookApp] Permission to listen on port 8827 denied
+[C 14:32:41.244 NotebookApp] ERROR: the notebook server could not be started because no available port could be found.
+[I 14:35:47.730 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 14:35:47.735 NotebookApp] Serving notebooks from local directory: /mnt/b/B/projects/books_recommend/main/notebook
+[I 14:35:47.735 NotebookApp] The Jupyter Notebook is running at:
+[I 14:35:47.735 NotebookApp] http://localhost:8888/
+[I 14:35:47.735 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:36:05.359 NotebookApp] 302 GET / (127.0.0.1) 0.96ms
+[I 14:36:14.899 NotebookApp] Kernel started: 7fd7ad3b-7bf5-4127-a682-eabaecea04f3
+[I 14:36:17.841 NotebookApp] Adapting to protocol v5.1 for kernel 7fd7ad3b-7bf5-4127-a682-eabaecea04f3
+[I 14:38:14.712 NotebookApp] Saving file at /csv_to_mysql_books.ipynb
+[I 14:40:14.704 NotebookApp] Saving file at /csv_to_mysql_books.ipynb
+[I 14:42:14.705 NotebookApp] Saving file at /csv_to_mysql_books.ipynb
+[I 14:44:14.705 NotebookApp] Saving file at /csv_to_mysql_books.ipynb
+[I 14:49:07.116 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 14:49:07.117 NotebookApp] Serving notebooks from local directory: /mnt/b/B/projects/books_recommend/main/notebook
+[I 14:49:07.117 NotebookApp] The Jupyter Notebook is running at:
+[I 14:49:07.117 NotebookApp] http://localhost:8888/
+[I 14:49:07.117 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:49:07.140 NotebookApp] 302 GET / (127.0.0.1) 1.06ms
+[I 14:49:15.002 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 14:49:15.002 NotebookApp] Serving notebooks from local directory: /mnt/b/B/projects/books_recommend/main/notebook
+[I 14:49:15.002 NotebookApp] The Jupyter Notebook is running at:
+[I 14:49:15.002 NotebookApp] http://localhost:8888/
+[I 14:49:15.003 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:49:33.269 NotebookApp] Kernel started: 29238f89-fbf2-49d4-9331-f7c86738062d
+[I 14:49:36.070 NotebookApp] Adapting to protocol v5.1 for kernel 29238f89-fbf2-49d4-9331-f7c86738062d
+[I 14:51:32.927 NotebookApp] Saving file at /csv_to_mysql_books.ipynb
+[I 14:57:05.351 NotebookApp] Kernel started: e44cf292-9a74-4e58-97b9-a59b4d40011e
+[I 14:57:07.860 NotebookApp] Adapting to protocol v5.1 for kernel e44cf292-9a74-4e58-97b9-a59b4d40011e
+[I 14:59:06.005 NotebookApp] Saving file at /read_ratings.ipynb
+[W 15:17:23.239 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 15:17:24.225 NotebookApp] Kernel started: 1bd16600-9f93-46ce-8c46-1e6fb2f6b661
+[I 15:17:27.239 NotebookApp] Adapting to protocol v5.1 for kernel 1bd16600-9f93-46ce-8c46-1e6fb2f6b661
+[I 15:25:24.509 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 15:25:24.513 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 16:21:05.274 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:21:26.629 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:23:05.270 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:25:05.265 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:27:05.265 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:29:05.268 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:31:05.995 NotebookApp] Saving file at /read_ratings.ipynb
+[I 16:33:05.269 NotebookApp] Saving file at /read_ratings.ipynb
+[I 21:39:24.127 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:39:24.128 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:39:30.151 NotebookApp] Starting buffering for 29238f89-fbf2-49d4-9331-f7c86738062d:e7b7b0b4a2df4bf99834e4c1492855c7
+[I 21:39:30.169 NotebookApp] Starting buffering for e44cf292-9a74-4e58-97b9-a59b4d40011e:8855d3b3cf8146db8efb0a6ccdd472f7
+[I 21:41:24.109 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:41:24.109 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:43:25.320 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:43:25.321 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:51:24.420 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:51:24.421 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:53:24.111 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:53:24.112 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:55:24.108 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:55:24.109 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:56:58.926 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:56:58.926 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:57:05.858 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 21:57:05.858 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 21:57:18.169 NotebookApp] 302 GET / (127.0.0.1) 1.42ms
+[I 22:23:24.116 NotebookApp] Saving file at /csv_to_mysql_users.ipynb
+[W 22:23:24.116 NotebookApp] Notebook csv_to_mysql_users.ipynb is not trusted
+[I 23:33:27.366 NotebookApp] Starting buffering for 1bd16600-9f93-46ce-8c46-1e6fb2f6b661:bd2d94b47bd74cda824673881c5ccc35
+[I 23:34:04.459 NotebookApp] 302 GET / (127.0.0.1) 1.04ms
+[I 20:23:17.302 NotebookApp] 302 GET / (127.0.0.1) 0.80ms

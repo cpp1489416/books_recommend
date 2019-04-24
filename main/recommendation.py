@@ -1,7 +1,7 @@
 import pickle
 
 import redis
-from .notebook import read_ratings
+from .note import read_ratings
 
 _o = None
 
