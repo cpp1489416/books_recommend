@@ -18,11 +18,11 @@ class Recommendation:
     def update(self):
         self.similarity = pickle.loads(self.redis_server.get('books_recommend:unsorted_similarity'))
         self.similarity_sorted = pickle.loads(self.redis_server.get('books_recommend:sorted_similarity'))
-        c = pickle.loads(self.redis_server.get('books_recommend:cost_time'))
+        c = self.redis_server.get('books_recommend:cost_time')
         if c is None:
             self.cost_seconds = 0.0
         else:
-            self.cost_seconds = c.total_seconds()
+            self.cost_seconds = pickle.loads(c).total_seconds()
 
 
     def regenerate(self):
