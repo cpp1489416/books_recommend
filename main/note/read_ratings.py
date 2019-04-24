@@ -118,7 +118,7 @@ def main_flow():
 # In[6]:
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main_flow()
 
 
