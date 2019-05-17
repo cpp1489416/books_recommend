@@ -422,6 +422,27 @@ class RecommendationsCoverage(View):
         return RestJsonResponse(None)
 
 
+def recommendations_f_measure(request):
+    recalls = Metrics.objects.filter(algorithm_name='item_cf', type='recall').order_by('k')
+    precisions = Metrics.objects.filter(algorithm_name='item_cf', type='precision').order_by('k')
+    recall_dict = {}
+    for recall in recalls:
+        recall_dict[recall.k] = recall.value
+    precision_dict = {}
+    for precision in precisions:
+        precision_dict[precision.k] = precision.value
+    ans = []
+    for k, recall in recall_dict.items():
+        if k not in precision_dict:
+            continue
+        precision = precision_dict[k]
+        ans.append({
+            'k': k,
+            'value': 2 * precision * recall / (precision + recall)
+        })
+    return RestJsonResponse(ans)
+
+
 def recommendations_status(request):
     return RestJsonResponse({
         'precision_generating': recommendation.get_redis_server().get('books_recommend:precision_mark') is not None,

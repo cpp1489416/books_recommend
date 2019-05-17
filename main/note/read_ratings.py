@@ -15,7 +15,7 @@ import pickle
 
 
 def get_ratings():
-    db = pymysql.connect('localhost', 'root', 'password', 'books_recommend',charset='utf8')
+    db = pymysql.connect('127.0.0.1', 'root', 'password', 'books_recommend',charset='utf8')
     cursor = db.cursor()
     cursor.execute('select user_id, book_id, rating from main_rating')
     results = cursor.fetchall()

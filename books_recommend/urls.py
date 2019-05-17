@@ -19,7 +19,7 @@ from django.urls import path
 from main import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('login', views.login),
     path('register', views.register),
     path('logout', views.logout),
@@ -41,6 +41,7 @@ urlpatterns = [
     path('recommendations/precision', views.RecommendationsPrecision.as_view()),
     path('recommendations/recall', views.RecommendationsRecall.as_view()),
     path('recommendations/coverage', views.RecommendationsCoverage.as_view()),
+    path('recommendations/f_measure', views.recommendations_f_measure),
     path('recommendations/status', views.recommendations_status),
     path('prometheus/metrics', views.prometheus_metrics),
 ]

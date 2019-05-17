@@ -1,0 +1,107 @@
+Watching for file changes with StatReloader
+Forbidden: /
+[15/May/2019 12:12:03] "GET / HTTP/1.1" 403 50
+Forbidden: /favicon.ico
+[15/May/2019 12:12:03] "GET /favicon.ico HTTP/1.1" 403 50
+Forbidden: /user
+[15/May/2019 12:12:50] "GET /user HTTP/1.1" 403 50
+[15/May/2019 12:13:37] "POST /login HTTP/1.1" 200 38
+[15/May/2019 12:13:37] "GET /user HTTP/1.1" 200 511
+[15/May/2019 12:13:37] "GET /recommendations/status HTTP/1.1" 200 144
+[15/May/2019 12:13:41] "GET /recommendations/precision HTTP/1.1" 200 327
+[15/May/2019 12:13:46] "GET /books?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2697
+[15/May/2019 12:13:49] "GET /books/1 HTTP/1.1" 200 283
+[15/May/2019 12:13:50] "GET /books/1/rating HTTP/1.1" 200 90
+[15/May/2019 12:15:09] "GET /users?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 5020
+[15/May/2019 12:15:12] "GET /users/1 HTTP/1.1" 200 527
+[15/May/2019 12:15:12] "GET /users/1/recommendations?k=4&ignore_rated=false&order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 3128
+[15/May/2019 12:15:15] "GET /users/1 HTTP/1.1" 200 527
+[15/May/2019 12:15:15] "GET /users/1/recommendations?k=4&ignore_rated=false&order_by=id&page_number=2&page_size=10 HTTP/1.1" 200 3052
+[15/May/2019 12:20:30] "GET /books/2068 HTTP/1.1" 200 370
+[15/May/2019 12:20:31] "GET /books/2068/rating HTTP/1.1" 200 54
+[15/May/2019 12:20:34] "GET /books/2068 HTTP/1.1" 200 370
+[15/May/2019 12:20:34] "GET /books/2068/ratings?order_by=id&page_number=1&page_size=10&user_name= HTTP/1.1" 200 2783
+[15/May/2019 12:20:36] "GET /books/2068 HTTP/1.1" 200 370
+[15/May/2019 12:20:37] "GET /books/2068/rating HTTP/1.1" 200 54
+[15/May/2019 12:20:39] "GET /users?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 5020
+[15/May/2019 12:20:43] "GET /users/3 HTTP/1.1" 200 526
+[15/May/2019 12:20:44] "GET /users/3/recommendations?k=4&ignore_rated=false&order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2878
+/usr/local/lib/python3.6/site-packages/sqlparse/filters/__init__.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 15, 2019 - 12:11:47
+Django version 2.2.1, using settings 'books_recommend.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+False
+False
+False
+Watching for file changes with StatReloader
+[15/May/2019 13:18:08] "GET /user HTTP/1.1" 200 511
+[15/May/2019 13:18:08] "GET /recommendations/status HTTP/1.1" 200 144
+[15/May/2019 13:18:10] "GET /recommendations/precision HTTP/1.1" 200 327
+[15/May/2019 13:18:13] "GET /recommendations/recall HTTP/1.1" 200 340
+[15/May/2019 13:18:16] "GET /recommendations/coverage HTTP/1.1" 200 317
+[15/May/2019 13:18:18] "GET /recommendations?k=4&ignore_rated=true&order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2836
+[15/May/2019 13:21:29] "GET /recommendations/precision HTTP/1.1" 200 327
+[15/May/2019 13:21:31] "GET /books?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2697
+[15/May/2019 13:21:33] "GET /users?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 5020
+[15/May/2019 13:21:36] "GET /users/1 HTTP/1.1" 200 527
+[15/May/2019 13:21:36] "GET /users/1/ratings?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 8341
+[15/May/2019 13:21:39] "GET /ratings?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 8247
+[15/May/2019 13:23:31] "GET /books?order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2697
+/mnt/c/b/projects/books_recommend/books_recommend/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 15, 2019 - 13:02:36
+Django version 2.2.1, using settings 'books_recommend.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+True
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[16/May/2019 10:55:46] "GET /user HTTP/1.1" 200 511
+[16/May/2019 10:55:47] "GET /recommendations/status HTTP/1.1" 200 144
+[16/May/2019 10:57:01] "GET /recommendations?k=4&ignore_rated=true&order_by=id&page_number=1&page_size=10 HTTP/1.1" 200 2836
+[16/May/2019 10:57:05] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 10:58:05] "GET /recommendations/recall HTTP/1.1" 200 340
+[16/May/2019 10:58:08] "GET /recommendations/coverage HTTP/1.1" 200 317
+[16/May/2019 10:58:51] "PUT /recommendations/coverage HTTP/1.1" 200 38
+[16/May/2019 10:58:51] "GET /recommendations/coverage HTTP/1.1" 200 321
+[16/May/2019 11:02:33] "PUT /recommendations/coverage HTTP/1.1" 200 38
+[16/May/2019 11:02:33] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 11:03:21] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:09:07] "GET /user HTTP/1.1" 200 511
+[16/May/2019 14:09:07] "GET /recommendations/status HTTP/1.1" 200 144
+[16/May/2019 14:09:14] "GET /recommendations/recall HTTP/1.1" 200 340
+[16/May/2019 14:10:02] "PUT /recommendations/recall HTTP/1.1" 200 38
+[16/May/2019 14:10:02] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:25:55] "GET /user HTTP/1.1" 200 511
+[16/May/2019 14:25:55] "GET /recommendations/status HTTP/1.1" 200 144
+[16/May/2019 14:26:02] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:26:05] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:26:09] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:26:23] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:26:25] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:26:26] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:26:28] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:26:30] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:26:32] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:26:33] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:26:46] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:26:48] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 14:26:55] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:27:01] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:27:07] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:27:12] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 14:27:14] "GET /recommendations/precision HTTP/1.1" 200 327
+[16/May/2019 14:27:52] "PUT /recommendations/precision HTTP/1.1" 200 38
+[16/May/2019 14:27:52] "GET /recommendations/precision HTTP/1.1" 200 355
+[16/May/2019 15:32:16] "GET /recommendations/coverage HTTP/1.1" 200 352
+[16/May/2019 15:32:17] "GET /recommendations/recall HTTP/1.1" 200 372
+[16/May/2019 15:32:21] "GET /user HTTP/1.1" 200 511
+[16/May/2019 15:32:21] "GET /recommendations/recall HTTP/1.1" 200 372
+[17/May/2019 01:36:11] "GET /user HTTP/1.1" 200 511
+[17/May/2019 01:36:12] "GET /recommendations/recall HTTP/1.1" 200 372
