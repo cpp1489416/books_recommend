@@ -21,6 +21,7 @@ import time
 import sys
 from . import recommendation
 import prometheus_client
+from prometheus_client import Gauge
 
 logger = logging.getLogger(__name__)
 
@@ -329,8 +330,14 @@ def recommendations_regenerate_similarity(request):
     })
 
 
-def prometheus_metrics(request):
-    return HttpResponse("fdsjfaoisdfjosjdifods")
+class PrometheusMetrics(View):
+    cost_times = Gauge('cost_seconds', 'cost seconds of regenerate similarity')
+
+    @staticmethod
+    def get(request):
+        recommendation.update_similarity()
+        PrometheusMetrics.cost_times.set(recommendation.get_cost_seconds())
+        return HttpResponse(prometheus_client.generate_latest(PrometheusMetrics.cost_times))
 
 
 class RecommendationsPrecision(View):
@@ -438,12 +445,13 @@ def recommendations_f_measure(request):
         precision = precision_dict[k]
         ans.append({
             'k': k,
-            'value': 2 * precision * recall / (precision + recall)
+            'value': round(2 * precision * recall / (precision + recall), 6)
         })
     return RestJsonResponse(ans)
 
 
 def recommendations_status(request):
+    recommendation.update_similarity()
     return RestJsonResponse({
         'precision_generating': recommendation.get_redis_server().get('books_recommend:precision_mark') is not None,
         'recall_generating': recommendation.get_redis_server().get('books_recommend:recall_mark') is not None,

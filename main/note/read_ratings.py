@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[13]:
 
 
 import pymysql
@@ -9,13 +9,14 @@ import math
 import operator
 import redis
 import pickle
+from datetime import datetime
 
 
-# In[2]:
+# In[14]:
 
 
 def get_ratings():
-    db = pymysql.connect('127.0.0.1', 'root', 'password', 'books_recommend',charset='utf8')
+    db = pymysql.connect('localhost', 'root', 'password', 'books_recommend',charset='utf8')
     cursor = db.cursor()
     cursor.execute('select user_id, book_id, rating from main_rating')
     results = cursor.fetchall()
@@ -30,7 +31,6 @@ def get_ratings():
         if user_id not in ratings:
             ratings[user_id] = []
         ratings[user_id].append(book_id)
-        pass
     cursor.close()
     db.close()
     del results
@@ -39,7 +39,7 @@ def get_ratings():
     return ratings
 
 
-# In[3]:
+# In[15]:
 
 
 def calculate_similarity(ratings):
@@ -82,44 +82,37 @@ def calculate_similarity(ratings):
     return book_similarity_score, book_similarity_score_sorted
 
 
-# In[4]:
-
-
-def flush_to_redis(books_similarity, books_similarity_sorted):
-    r = redis.Redis(host='localhost', port=6379, db=0, password='password_of_redis_password_of_redis')
-    prefix = 'books_recommend:unsorted'
-    count = 0
-    r.set('books_recommend:unsorted_similarity', pickle.dumps(books_similarity))
-    r.set('books_recommend:sorted_similarity', pickle.dumps(books_similarity_sorted))
-    '''
-    for i, books in books_similarity.items():
-        for j in books:
-            r.hset(prefix + str(i), str(j), str(books[j]))
-        count += 1
-        print(str(i) + 'finished, count:' + str(count))
-        pass
-    pass
-    '''
-
-
-# In[5]:
+# In[16]:
 
 
 def main_flow():
+    start_time = datetime.now()
     ratings = get_ratings()
-    similarity, similarity_sorted = calculate_similarity(ratings)
-    del ratings
+    books_similarity, books_similarity_sorted = calculate_similarity(ratings)
+    
     print('now start to flush to redis')
-    flush_to_redis(similarity, similarity_sorted)
+    r = redis.Redis(host='localhost', port=6379, db=0, password='password_of_redis_password_of_redis')
+    r.set('books_recommend:unsorted_similarity', pickle.dumps(books_similarity))
+    r.set('books_recommend:sorted_similarity', pickle.dumps(books_similarity_sorted))
+    
+    end_time = datetime.now()
+    r.set('books_recommend:cost_time', pickle.dumps(end_time - start_time))
+    
     print('flush ended')
-    pass
+    print((end_time - start_time).total_seconds())
 
 
-# In[6]:
+# In[18]:
 
 
 if __name__ == '__main__':
     main_flow()
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

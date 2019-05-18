@@ -43,5 +43,5 @@ urlpatterns = [
     path('recommendations/coverage', views.RecommendationsCoverage.as_view()),
     path('recommendations/f_measure', views.recommendations_f_measure),
     path('recommendations/status', views.recommendations_status),
-    path('prometheus/metrics', views.prometheus_metrics),
+    path('prometheus/metrics', views.PrometheusMetrics.as_view()),
 ]

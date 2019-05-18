@@ -16,7 +16,9 @@ class AuthMiddleware(MiddlewareMixin):
                 request.info = json.loads(request.body)
             except JSONDecodeError:
                 return HttpResponse(status=400)
-        if request.path == '/login' or request.path == '/create_admin' or request.path == '/register':
+        
+        ignore_paths = ['/login', '/create_admin', '/register', '/prometheus/metrics']
+        if request.path in ignore_paths:
             return
         if not request.user.is_authenticated:
             return JsonResponse(status=403, data={

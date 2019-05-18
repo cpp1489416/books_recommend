@@ -206,3 +206,43 @@ WARNING:root:kernel 4c8a627a-d7be-4be3-b7f9-f00f7fb26ba4 restarted
 [I 23:33:27.366 NotebookApp] Starting buffering for 1bd16600-9f93-46ce-8c46-1e6fb2f6b661:bd2d94b47bd74cda824673881c5ccc35
 [I 23:34:04.459 NotebookApp] 302 GET / (127.0.0.1) 1.04ms
 [I 20:23:17.302 NotebookApp] 302 GET / (127.0.0.1) 0.80ms
+[I 18:04:20.952 NotebookApp] Serving notebooks from local directory: /mnt/c/B/projects/books_recommend/main/note
+[I 18:04:20.952 NotebookApp] The Jupyter Notebook is running at:
+[I 18:04:20.952 NotebookApp] http://localhost:8888/?token=550b8c3e981143b61955addc6955aea269c25e4cffb50d8f
+[I 18:04:20.953 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 18:04:20.971 NotebookApp] No web browser found: could not locate runnable browser.
+[C 18:04:20.972 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-11824-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=550b8c3e981143b61955addc6955aea269c25e4cffb50d8f
+[I 18:04:35.027 NotebookApp] Writing notebook-signing key to /root/.local/share/jupyter/notebook_secret
+[W 18:04:35.039 NotebookApp] Notebook read_ratings.ipynb is not trusted
+[I 18:04:36.553 NotebookApp] Kernel started: 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[I 18:04:39.246 NotebookApp] Adapting to protocol v5.1 for kernel 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[I 18:06:13.481 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:06:35.490 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:08:59.357 NotebookApp] Starting buffering for 198ccf81-7623-4b32-b3ec-da2d4964ba7e:687fdac8872a470e8bb780e4a131fe6c
+[I 18:09:05.417 NotebookApp] Adapting to protocol v5.1 for kernel 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[I 18:15:05.389 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:28:45.727 NotebookApp] Starting buffering for 198ccf81-7623-4b32-b3ec-da2d4964ba7e:7987a239c12940c99ea5c18596c01c0a
+[I 18:28:47.011 NotebookApp] Adapting to protocol v5.1 for kernel 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[W 18:29:22.986 NotebookApp] 404 GET /static/components/proptypes/index.js.map (127.0.0.1) 65.19ms referer=None
+[W 18:29:22.997 NotebookApp] 404 GET /static/components/preact/preact.min.js.map (127.0.0.1) 74.13ms referer=None
+[W 18:29:23.003 NotebookApp] 404 GET /static/components/preact-compat/preact-compat.min.js.map (127.0.0.1) 4.12ms referer=None
+[I 18:29:27.190 NotebookApp] Starting buffering for 198ccf81-7623-4b32-b3ec-da2d4964ba7e:28b0fe9180ae428d8af2ef3c5e8937ef
+[W 18:29:30.607 NotebookApp] 404 GET /static/components/preact/preact.min.js.map (127.0.0.1) 6.01ms referer=None
+[W 18:29:30.879 NotebookApp] 404 GET /static/components/preact-compat/preact-compat.min.js.map (127.0.0.1) 8.91ms referer=None
+[W 18:29:30.882 NotebookApp] 404 GET /static/components/proptypes/index.js.map (127.0.0.1) 11.02ms referer=None
+[I 18:29:32.526 NotebookApp] Adapting to protocol v5.1 for kernel 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[I 18:39:32.493 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:49:32.455 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:57:32.454 NotebookApp] Saving file at /read_ratings.ipynb
+[I 19:07:38.857 NotebookApp] Starting buffering for 198ccf81-7623-4b32-b3ec-da2d4964ba7e:e3060029f5bb46d89a99aff1eeaa2609
+[I 10:49:20.229 NotebookApp] 302 GET /?token=2c3bb0eedf0e19ef9dcbfd12ee4a85cd2a5a37f5fa0505a6 (127.0.0.1) 2.49ms
+[I 10:49:24.968 NotebookApp] Adapting to protocol v5.1 for kernel 198ccf81-7623-4b32-b3ec-da2d4964ba7e
+[I 10:53:24.955 NotebookApp] Saving file at /read_ratings.ipynb
+[I 10:54:04.305 NotebookApp] Saving file at /read_ratings.ipynb
+[I 10:54:31.582 NotebookApp] Saving file at /read_ratings.ipynb
+[I 18:43:01.874 NotebookApp] Starting buffering for 198ccf81-7623-4b32-b3ec-da2d4964ba7e:9ae9a9d4f7bd41e38cbb8f2811b8322d
